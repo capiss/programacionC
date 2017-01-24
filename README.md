@@ -1,2 +1,5 @@
 # programacionC
-Programación en C
+ Programación en C
+
+# Autor
+  Armando Hernández Hernández

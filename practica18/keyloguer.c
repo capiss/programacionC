@@ -9,7 +9,7 @@
 int main(){
   int fd,nread;
   struct input_event ev;
-  char *archivo="/dev/input/event7";
+  char *archivo="/dev/input/event3";
   char *texto;
   fd=open(archivo,O_RDONLY);
   if(fd==-1) //valida que abra correctamente
@@ -18,7 +18,8 @@ int main(){
   while(1){
     read(fd, &ev, sizeof(struct input_event));
 //    write(1,ev.value,sizeof(struct input_event));
-    printf("%d",ev.value);
+    if(ev.type==1)
+      printf("%d",ev.value);
   }
   close(fd);
 }
